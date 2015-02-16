@@ -25,5 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *followerCount;
 @property (weak, nonatomic) IBOutlet UILabel *TweetCount;
 @property (weak, nonatomic) IBOutlet UILabel *followingCount;
-- (void) setWidthForLabel : (UILabel *)label withView: (UIView *)view;
+@property (weak, nonatomic) IBOutlet UILabel *latestTweet;
+@property(nonatomic,strong) NSString *latestTweetText;
+- (void) setWidthForLabel : (UILabel *)label withWidthFactor: (double)widthFactor;
 @end

@@ -10,6 +10,7 @@
                 <outlet property="backgroundImage" destination="XeY-8n-iWQ" id="JJd-Cb-R4x"/>
                 <outlet property="followerCount" destination="lPb-Bg-L4b" id="m3b-qt-OUG"/>
                 <outlet property="followingCount" destination="eAX-Nd-XZn" id="dBF-BP-Rqo"/>
+                <outlet property="latestTweet" destination="eCm-cu-Lht" id="Mbg-wp-BcP"/>
                 <outlet property="menuTableView" destination="chc-BV-DoY" id="uL4-Bf-n8l"/>
                 <outlet property="menuView" destination="FBX-CX-qnD" id="tkZ-QG-yBn"/>
                 <outlet property="profileImage" destination="CrQ-X3-97D" id="uae-Bt-HRc"/>
@@ -78,6 +79,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Tweet" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eCm-cu-Lht">
+                    <rect key="frame" x="13" y="383" width="849" height="47"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

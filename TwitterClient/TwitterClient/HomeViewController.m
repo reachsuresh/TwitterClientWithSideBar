@@ -148,6 +148,7 @@
     
     [pvc setUserId:tweet.user.id];
     [pvc setScreenNameFromParent:tweet.user.screenName];
+    [pvc setLatestTweetText:tweet.text];
     [self.navigationController pushViewController:pvc animated:YES];
     
     NSLog(@"indexPath = %@", indexPath);

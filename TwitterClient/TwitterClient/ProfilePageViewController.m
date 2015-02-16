@@ -103,6 +103,7 @@
 }
 
 - (void) renderDetails {
+    self.title = self.user.name;
     NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.user.backgroundImageUrl]];
     self.backgroundImage.image = [UIImage imageWithData:data];
 
@@ -122,19 +123,45 @@
     self.userName.text = self.user.name;
     self.screenName.text = [NSString stringWithFormat:@"@%@",self.user.screenName];
     
-    [self setWidthForLabel:self.TweetCount withView:self.view];
-    [self setWidthForLabel:self.followerCount withView:self.view];
-        [self setWidthForLabel:self.followingCount withView:self.view];
+    [self setWidthForLabel:self.TweetCount withWidthFactor:4];
+    [self setWidthForLabel:self.followerCount withWidthFactor:4];
+        [self setWidthForLabel:self.followingCount withWidthFactor:4];
     self.TweetCount.text = [NSString stringWithFormat:@"%@ Tweets",self.user.tweetCount];
     self.followingCount.text = [NSString stringWithFormat:@"%@ Following",self.user.followingCount];
     self.followerCount.text = [NSString stringWithFormat:@"%@ Followers", self.user.followerCount];
+    [self.latestTweet setFont:[UIFont fontWithName:@"Arial" size:18.0]];
+    CGRect frame = CGRectMake(self.latestTweet.frame.origin.x, self.latestTweet.frame.origin.y, 300, 100);
+    self.latestTweet.frame = frame;
+    self.latestTweet.text = [NSString stringWithFormat:@"Latest Tweet\n %@", self.latestTweetText];
     
 }
 
-- (void) setWidthForLabel : (UILabel *)label withView:(UIView *) view {
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Add your Colour.
+    MenuItemsTableViewCell *cell = (MenuItemsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [self setCellColor:[UIColor colorWithRed:0 green:0 blue:1 alpha:0.8] ForCell:cell];  //highlight colour
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Reset Colour.
+    MenuItemsTableViewCell *cell = (MenuItemsTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    [self setCellColor:[UIColor colorWithWhite:0.961 alpha:1.000] ForCell:cell]; //normal color
+    
+}
+
+- (void)setCellColor:(UIColor *)color ForCell:(UITableViewCell *)cell {
+    cell.contentView.backgroundColor = color;
+    cell.backgroundColor = color;
+}
+
+- (void) setWidthForLabel : (UILabel *)label withWidthFactor:(double) widthFactor {
     //label.frame.size.height;
     
-    CGRect frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, view.frame.size.width / 4, 100);
+    CGRect frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, self.view.frame.size.width / widthFactor, 100);
     label.frame = frame;
 
 }
