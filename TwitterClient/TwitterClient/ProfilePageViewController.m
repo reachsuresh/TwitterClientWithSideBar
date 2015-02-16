@@ -25,7 +25,9 @@
     [self fetchUserDetails];
     [self.menuView setFrame:CGRectMake(-self.menuView.frame.size.width,self.menuView.frame.origin.y, self.menuView.frame.size.width, self.menuView.frame.size.height)];
     
-
+    self.menuView.hidden = false;
+    self.menuView.layer.borderColor = [UIColor colorWithRed:0 green:0 blue:1 alpha:1].CGColor;
+    self.menuView.layer.borderWidth = 1.0f;
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
@@ -45,6 +47,8 @@
     
     // Do any additional setup after loading the view from its nib.
 }
+
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
@@ -249,6 +253,17 @@
         
     }
 }
+
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        self.menuView.hidden = true;
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+    }
+    [super viewWillDisappear:animated];
+}
+
+
 
 
 @end

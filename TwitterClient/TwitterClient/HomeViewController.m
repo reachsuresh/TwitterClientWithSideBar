@@ -154,6 +154,11 @@
     NSLog(@"indexPath = %@", indexPath);
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewAutomaticDimension;
+}
+
 - (void)onCreateNewTweet {
     NSLog(@"for creating new tweet");
     TweetPostViewController *tpvc = [[TweetPostViewController alloc] init];
