@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfilePageViewController">
             <connections>
+                <outlet property="TweetCount" destination="Lvy-ZC-Dxh" id="KKY-6b-hoO"/>
                 <outlet property="backgroundImage" destination="XeY-8n-iWQ" id="JJd-Cb-R4x"/>
+                <outlet property="followerCount" destination="lPb-Bg-L4b" id="m3b-qt-OUG"/>
+                <outlet property="followingCount" destination="eAX-Nd-XZn" id="dBF-BP-Rqo"/>
                 <outlet property="menuTableView" destination="chc-BV-DoY" id="uL4-Bf-n8l"/>
                 <outlet property="menuView" destination="FBX-CX-qnD" id="tkZ-QG-yBn"/>
                 <outlet property="profileImage" destination="CrQ-X3-97D" id="uae-Bt-HRc"/>
@@ -43,11 +46,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" id="FBX-CX-qnD">
-                    <rect key="frame" x="0.0" y="0.0" width="266" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="268" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="chc-BV-DoY">
-                            <rect key="frame" x="0.0" y="62" width="266" height="506"/>
+                            <rect key="frame" x="18" y="62" width="250" height="506"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
@@ -55,6 +58,27 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <gestureRecognizers/>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Lvy-ZC-Dxh">
+                    <rect key="frame" x="8" y="284" width="77" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eAX-Nd-XZn">
+                    <rect key="frame" x="116" y="284" width="77" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lPb-Bg-L4b">
+                    <rect key="frame" x="235" y="284" width="77" height="39"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="302" y="275"/>

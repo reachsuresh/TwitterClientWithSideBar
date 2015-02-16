@@ -22,5 +22,8 @@
 - (void)onCustomPan:(UIPanGestureRecognizer *)panGestureRecognizer;
 @property (weak, nonatomic) IBOutlet UITableView *menuTableView;
 @property(nonatomic, strong) NSArray *menuItems;
-
+@property (weak, nonatomic) IBOutlet UILabel *followerCount;
+@property (weak, nonatomic) IBOutlet UILabel *TweetCount;
+@property (weak, nonatomic) IBOutlet UILabel *followingCount;
+- (void) setWidthForLabel : (UILabel *)label withView: (UIView *)view;
 @end

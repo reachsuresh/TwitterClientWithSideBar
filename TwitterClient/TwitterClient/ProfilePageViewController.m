@@ -27,7 +27,7 @@
     
 
     
-    self.view.backgroundColor = [[UIColor alloc] initWithRed:1 green:0 blue:0 alpha:0.5];
+    self.view.backgroundColor = [UIColor colorWithWhite:0.9 alpha:1];
     
     UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onCustomPan:)];
     [self.view addGestureRecognizer:panGestureRecognizer];
@@ -122,6 +122,21 @@
     self.userName.text = self.user.name;
     self.screenName.text = [NSString stringWithFormat:@"@%@",self.user.screenName];
     
+    [self setWidthForLabel:self.TweetCount withView:self.view];
+    [self setWidthForLabel:self.followerCount withView:self.view];
+        [self setWidthForLabel:self.followingCount withView:self.view];
+    self.TweetCount.text = [NSString stringWithFormat:@"%@ Tweets",self.user.tweetCount];
+    self.followingCount.text = [NSString stringWithFormat:@"%@ Following",self.user.followingCount];
+    self.followerCount.text = [NSString stringWithFormat:@"%@ Followers", self.user.followerCount];
+    
+}
+
+- (void) setWidthForLabel : (UILabel *)label withView:(UIView *) view {
+    //label.frame.size.height;
+    
+    CGRect frame = CGRectMake(label.frame.origin.x, label.frame.origin.y, view.frame.size.width / 4, 100);
+    label.frame = frame;
+
 }
 
 - (void)fetchUserDetails {

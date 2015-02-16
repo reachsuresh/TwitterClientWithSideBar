@@ -21,6 +21,9 @@
 @property (nonatomic, assign) NSInteger retweetCount;
 @property (nonatomic, assign) NSNumber *id;
 @property (nonatomic, strong) NSString *backgroundImageUrl;
+@property (nonatomic, strong) NSString *tweetCount;
+@property (nonatomic, strong) NSString *followerCount;
+@property (nonatomic, strong) NSString *followingCount;
 
 - (id)initWithDictionary : (NSDictionary *)dictionary;
 

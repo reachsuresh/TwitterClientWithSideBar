@@ -36,6 +36,11 @@ static User *_currentUser = nil;
         self.favCount = [dictionary[@"favourites_count"] integerValue];
         self.retweetCount = [dictionary[@"retweet_count"] integerValue];
         self.id = [NSNumber numberWithInt:dictionary[@"id"]];
+        
+        self.tweetCount = dictionary[@"listed_count"];
+        self.followerCount = dictionary[@"followers_count"];
+        self.followingCount = dictionary[@"friends_count"];
+        
     }
     
     
